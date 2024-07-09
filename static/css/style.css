@@ -1,0 +1,454 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/*HEADER*/
+header{
+    height: 140px;
+    background-color: #681c7c; /*TONO MENU Y FOOTER*/
+    padding: 0 50px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    width: 3em;
+}
+
+.menu a{
+    color: #fff;
+    text-transform: uppercase; /*pone todo en mayuscula*/
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.7s;
+}
+
+.mostrar-menu,
+.esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.7s;/* efecto cuando paso el cursor */
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover,
+.mostrar-menu:hover,
+.esconder-menu:hover{
+    color: #a770b2;
+}
+
+#check{
+    display: none;
+}
+
+/*<!-------- PRINCIPAL -------->*/
+#banner{
+    padding: 0 50px; /*medida en que se alinea todo el contenido*/
+    background-image: url(/static/images/front/keyboard.jpg);
+    height: 85vh;
+    background-size: cover;
+    background-position: center;
+
+}
+
+#banner::before{
+    content: ""; /*aunque este vacio, siempre debe tener un contenedor*/
+    background-color:rgba(77,77,92,0.6); /*es la sombra oscura que se coloca encima de la imagen*/
+    position: absolute;
+    width: 100%;
+    height:85vh;
+    left: 0; /*para que ocupe todo el viewport*/
+}
+
+.contenido-banner{
+    position: relative; /*para que la letra se posicione encima de la transparencia de la imagen*/
+    color: #fff;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenido-banner h2{  
+    font-size: 60px;
+    font-weight: 550;
+    padding: 10px 0px;
+}
+
+.boton-empezar{
+    text-decoration: none;
+    color: #fff;
+    padding: 20px 40px;
+    border: 1px solid #681c7c;  /*ocupa todo el vw porque esta como bloque*/
+    align-self: baseline; /*el borde solo ocupa el contenido*/
+}
+
+.boton-empezar:hover{
+    background-color: #681c7c;
+    transition: all 0.5s;
+}
+
+/*<!-------- PERSONAS -------->*/
+
+#personas{
+    padding: 50px 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+#personas-titulo{
+    margin-top: 70px;
+}
+h3{
+    background-color: #681c7c;
+    color: #fff;
+    /* color: #681c7c; */
+    text-align: center;
+    font-size: 35px;
+    font-weight: 150;
+    margin-top: 10px;
+    padding: 50px 0px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#personas img{
+    border-radius: 100%;
+    width: 30%;
+    background-color: violet;
+    object-fit: cover;
+}
+
+#personas div{
+    padding: 30px 30px;
+}
+
+#personas div h4{
+    color: #681c7c; /*tono principal*/
+    font-size: 20px;
+    margin: 15px 0px;
+}
+
+#personas div p{
+    color: #884299;
+    font-size: 18px;
+}
+
+.boton-saber-mas{
+    display: inline-block; /*si no pongo el atributo, el boton se superpone al contenido p*/
+    text-decoration: none;
+    color:#681c7c;
+    padding: 10px 30px;
+    border: 3px solid #681c7c;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+
+.boton-saber-mas:hover{
+    background-color: #681c7c;
+    color: #fff;
+}
+
+/*<!-------- SERVICIOS -------->*/
+
+#iconos{
+    padding: 0px 50px;
+    /* background-color: #a770b2; */
+    margin-bottom: 80px;
+}
+#iconos h2{
+    background-color: #681c7c;
+    color: #fff; 
+    text-align: center;
+    font-size: 30px;
+    font-weight: 100;
+    margin: 10px 0px;
+    padding: 50px 0px;
+}
+
+#iconos p{
+    color: #681c7c;/*rgba(255, 255, 255, 0.7)*/
+    text-align: center;
+    font-size: 19px;
+    padding-top: 40px;
+}
+
+#contenido-iconos{
+    padding: 40px 0px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+   
+}
+#contenido-iconos a{
+    text-decoration: none;
+}
+
+img{
+    border-radius: 10px;
+    box-shadow: 6px 5px 13px 0px rgba(105,33,135,0.59);
+    margin-bottom: 15px;
+}
+
+#contenido-iconos div{
+    flex: 1; /*para que c/u ocupe siempre lo mismo*/
+    margin: 20px 0px;
+}
+
+#contenido-iconos div:hover{
+    transform: translateY(-8px);
+    transition: 0.5s;
+    /* cursor: pointer; */
+
+}
+
+#contenido-iconos div h6{
+    color: #681c7c; /*#fff*/
+    font-size: 20px;
+    font-weight: 100;
+    margin: 10px 0px;
+    opacity: 0.7;
+}
+
+.boton-iconos{
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+/*-------- CONTACTO --------*/
+#contacto{
+    background-color: #681c7c;
+    padding: 50px 0px;
+    color: #fff;
+}
+
+#contacto h4{
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+#contacto form{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.datos-form{
+    display: flex;
+}
+
+.datos-form  div{
+    padding: 10px;
+    flex: 1;
+}
+
+form label{
+    display: block;
+    margin-bottom: 10px;
+}
+/*boton check*/
+.genero p,
+.genero input{
+    display: flex;
+    padding: 10px;
+    flex: 1;
+}
+/*contenido input select*/
+.select{
+    padding: 10px;
+    flex: 1;
+
+}
+
+form input,
+form textarea{
+    background-color: #681c7c;
+    border-radius: 10px;
+    border: 2px solid #884299;
+    padding: 10px 5px;
+    outline: 0; /*para que cuando hago click en el campo no se coloree de otro tono*/
+    color: #fff;
+    width: 100%;
+}
+
+form input:focus,
+form textarea:focus{
+    border-color:#a770b2;
+    box-shadow:  0 0 0 1px #a770b2;
+}
+
+form input::placeholder,
+form textarea::placeholder{
+    color: #a770b2;
+}
+
+.mensaje{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+   
+}
+.mensaje textarea{
+    width: 100%;
+    resize: none;
+}
+
+.boton-formulario .boton-saber-mas{
+    display: block;
+    border: 1px solid #fff;
+    color: #fff;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.boton-formulario .boton-saber-mas:hover{
+    background-color: #884299;
+}
+
+/*-------- FOOTER --------*/
+footer{
+    position: relative;
+    margin-top: 70px;
+    /* width: 100%; */
+    background-color: #a770b2;
+    /* min-height: 100px; */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+    /* margin: 10px 5px; */
+}
+
+.social-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 10px 5px;
+    flex-wrap: wrap;
+}
+
+.icon-elemento{
+    list-style: none;
+}
+
+.icon{
+    color: #fff;
+    font-size: 32px;
+    display: inline-block;
+    margin: 0 10px;
+    transition: 0.5s;
+}
+
+.icon:hover{
+    transform: translateY(-10px); /*efecto para que el icono suba cuando le paso el mouse*/
+}
+
+.menu-footer{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+}
+
+.menu-footer-elemento{
+    list-style: none;
+}
+
+.menu-footer-icon{
+    color: #fff;
+    font-size: 20px;
+    display: inline-block;
+    text-decoration: none;
+    margin: 5px 10px;
+    opacity: 0.75;
+    transition: 0.3s;
+} 
+
+.menu-footer-icon:hover{
+    opacity: 1;
+}
+
+.text{
+    color: #fff;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 17px;
+    opacity: 0.5;
+
+}
+
+/*------------------------------------------------*/
+
+/*RESPONSIVE*/
+@media(max-width: 768px){
+    /*---- HEADER --*/
+    .mostrar-menu,
+    .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background-color: #884299;
+        /* left: 0; */
+        right: -100%;  /*cuando hago click en X se corre hacia la izquierda */
+        top: 0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+
+    .esconder-menu{
+        position: absolute;
+        top: 40px; /*ubico la X*/
+        right: 40px;
+    }
+
+    #check:checked ~ .menu{
+        right: 0; /*cuando hago click en X se corre hacia la derecha */
+    }
+
+    /* titulo*/
+    .contenido-banner h2{
+        font-size: 55px;
+        text-align: center;
+    }
+
+    /*<!-------- PERSONAS -------->*/
+    #personas{
+        flex-direction: column;
+    }
+
+    /*<!-------- SERVICIOS -------->*/
+    #contenido-iconos{
+        flex-direction: column;
+    }
+
+    /*-------- CONTACTO --------*/
+    .datos-form{
+        flex-direction: column;
+
+    }
+}

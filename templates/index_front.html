@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Soluciones Digitales</title>
+</head>
+
+<!--EL SIGUIENTE ES UN PROYECYO REALIZADO EN EL CURSO CODO A CODO 2024
+     FULL STACK-PYTHON-
+    TEMA: ▪ SITIO WEB QUE PRESTA SERVICIOS DIGITALES ✔
+          ▪ ESTÁ CONECTADO EN LA PARTE BACKEND CON FLASK-PYTHON ✔
+          ▪ CONECTADO CON MYSQL (WORKBENCH - XAMPP) ✔
+          ▪ PERMITE HACER CONSULTAS CRUD ✔ -->
+<body>
+    <!-------- HEADER -------->
+    <header>
+        <figure> <img class="logo" src="/static/images/front/logo.png" alt=""></figure>
+        
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">&#8801</label>
+
+        <nav class="menu">
+             <a href="#">Inicio</a>
+             <a href="#personas-titulo">Nosotros</a>
+             <a href="#iconos">Servicios</a>
+             <a href="#contacto">Contacto</a>
+             <!-- <a href="{{url_for ('back', filename= '/templates/index.html')}}">login</a> -->
+             <a href="{{ url_for('back') }}">login</a>
+             <label for="check" class="esconder-menu">&#215</label>
+        </nav>
+    </header>
+
+    <!-------- PRINCIPAL -------->
+    <section id="banner">
+        <div class="contenido-banner">
+            <h2>
+                 <span> SOLUCIONES <br> DIGITALES</span>
+            </h2>
+            <!-- <a href="#" class="boton-empezar">Empezar</a> -->
+        </div>
+    </section>
+
+     <!-------- NOSOTROS -------->
+    <h3 id="personas-titulo"> QUIENES SOMOS </h3>
+    <section id="personas">
+        
+        <div>
+             <img src="/static/images/front/portfolio_juan.jpg" alt="usuario">
+             <h4> Juan </h4>
+             <a href= "{{url_for ('portfolio_juan', filename= '/portfolios/juan.html')}}" class="boton-saber-mas">Portfolio</a>
+        </div>
+
+        <div>
+             <img src="/static/images/front/portfolio_deborah.jpg" alt="usuario">
+             <h4> Deborah </h4>
+             <a href=" {{url_for ('portfolio_deborah', filename= '/portfolios/deborah.html')}}" class="boton-saber-mas">Portfolio</a>
+        </div>
+
+    </section>
+    <section id="personas">
+        <div>
+             <img src="/static/images/front/portfolio_maximiliano.jpg" alt="usuario">
+             <h4> Maximiliano </h4>
+             <a href="{{url_for ('portfolio_maximiliano', filename= '/portfolios/maximiliano.html')}}" class="boton-saber-mas">Portfolio</a>
+        </div>
+
+        <div>
+             <img src="/static/images/front/portfolio_david.jpeg" alt="usuario">
+             <h4> David </h4>
+             <a href="{{url_for ('portfolio_david', filename= '/portfolios/david.html')}}" class="boton-saber-mas">Portfolio</a>
+        </div>
+    </section>
+
+     <!-------- SERVICIOS -------->
+     <section id="iconos">
+        <h2> NUESTROS SERVICIOS</h2>
+        <p>
+             Somos un equipo de profesionales que trabajamos enfocados en asegurar el exito de nuestros clientes. <br>
+             Prestamos un servicio integral, para que quienes nos eligen no tengan que preocuparse por nada.
+        </p>
+
+        <div id="contenido-iconos">
+            <div>
+                 <img src="/static/images/front/compu_design.jpg" alt="pc diseño_web" width="220px">
+                 <H6><a href="{{url_for ('disenio', filename = '/servicios/disenio.html')}}">Diseño Web</a></H6>
+            </div>
+            <div>
+                 <img src="/static/images/front/marketing.jpg" alt="marketing digital" width="220px">
+                 <h6><a href="{{url_for ('marketing', filename= '/servicios/marketing.html')}}">Marketing</a></h6>
+            </div>
+            <div>
+                 <img src="/static/images/front/fb_like.jpg" alt="redes sociales" width="220px">
+                 <h6><a href="{{url_for ('contenido_digital', filename= '/servicios/contenido_digital.html')}}">Contenido Digital</a></h6>
+            </div>
+        </div>
+        <div class="boton-iconos">
+             <a href="#" class="boton-saber-mas">Más Info</a>
+        </div>
+     </section>
+
+     <!-------- CONTACTO -------->
+
+     <section id="contacto">
+        <h4>CONTACTO</h4>
+        <form action="" id="form"> <!--onsubmit="enviarFormulario()" -->
+            <div class="datos-form">
+                 <div class="nombre">
+                     <label for="nombre">Nombre: </label>
+                     <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+                 </div>
+                 <div class="apellido">
+                     <label for="apellido">Apellido: </label>
+                     <input type="text" name="apellido" id="apellido" placeholder="Apellido" >
+                </div>             
+            </div>
+            <div class="datos-form">
+                 <div class="mensaje">
+                     <label for="email">Email: </label>
+                     <input type="email" name="email" id="email" placeholder="Email"> 
+                 </div>
+                 <div class="telefono">
+                     <label for="telefono">Teléfono: </label>
+                     <input type="tel" name="telefono" id="telefono" placeholder="Ingrese sólo números">
+                 </div>
+            </div>
+            
+            <div class="genero">
+                <p>Género:
+                     <input type="radio" name="genero" value="mujer" checked> Mujer
+                     <input type="radio" name="genero" value="hombre"> Hombre
+                     <input type="radio" name="genero" value="Otro"> Otro
+                </p>  
+           </div>
+           <div class="select">
+                 <label for="select">Motivo de su consulta: </label>
+                 <select name="select" id="select">
+                     <option value=" ">ELEGIR</option>
+                     <option value="diseño">Diseño Web</option>
+                     <option value="marketing">Marketing</option>
+                     <option value="creacion">Creacion De Contenido</option>
+                     <option value="otro">Otro</option>
+                 </select>
+            <br>
+
+           </div>
+            <div class="mensaje">
+                 <label for="mensaje">Mensaje: </label>
+                 <textarea name="mensaje" id="mensaje" rows="10" cols="20"   placeholder="Mensaje:"></textarea>
+            </div>
+            <div class="boton-formulario">
+                 <input type="submit" class="boton-saber-mas"  value="Enviar"> 
+            </div>
+        </form>
+        <div id="error">
+            <p id="warnings"></p> </div>
+     </section>
+
+       <!-------- FOOTER -------->
+     <footer class="footer">
+        <!-------- ICONOS -------->
+        <ul class="social-icon">
+            <li class="icon-elemento">
+                <a href="" class="icon">
+                     <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+            </li>
+            <li class="icon-elemento">
+                <a href="" class="icon"> 
+                     <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+            <li class="icon-elemento">
+                <a href="" class="icon">
+                     <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="icon-elemento">
+                <a href="" class="icon">
+                     <ion-icon name="mail-outline"></ion-icon>
+                </a>
+            </li>  
+        </ul>
+        <!-------- MENU FOOTER -------->
+        <ul class="menu-footer">
+            <li class="menu-footer-elemento">
+                 <a href="" class="menu-footer-icon">Inicio</a>
+            </li>
+            <li class="menu-footer-elemento">
+                 <a href="#personas-titulo" class="menu-footer-icon">Nosotros</a>
+            </li>
+            <li class="menu-footer-elemento">
+                 <a href="#iconos" class="menu-footer-icon">Servicios</a>
+            </li>
+            <li class="menu-footer-elemento">
+                 <a href="#contacto" class="menu-footer-icon">Contacto</a>
+            </li>
+            <li class="menu-footer-elemento">
+                <a href="{{ url_for('back') }}" class="menu-footer-icon">Login</a>
+           </li>
+        </ul>
+         <p class="text">
+             &copy2024 | Trabajo Realizado por Juan, Deborah, Maximiliano y David |  &copy2024 
+         </p>
+     </footer>
+     <!----------------------------------------------------->
+     <!-- Importo desde web ionicons para los ICONOS -->
+     <script  
+         type = "module" 
+         src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+     </script> 
+     <script 
+         nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> 
+     </script> 
+<!-- vinculo con la hoja Javascript -->
+<!-- <script src="hoja.js"></script>    -->
+
+    
+</body>
+</html>

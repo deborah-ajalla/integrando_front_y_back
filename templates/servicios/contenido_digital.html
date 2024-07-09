@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/crea_contenido.css">
+    <title>Creación de Contenido</title>
+</head>
+<body>
+     <!------- ENCABEZADO------->
+     <header>
+         <figure> <img class="logo" src="/static/images/front/logo.png" alt=""></figure>
+        
+         <input type="checkbox" id="check">
+         <label for="check" class="mostrar-menu">&#8801</label>
+
+         <nav class="menu">
+             <a href="/">Inicio</a>
+             <!-- <a href="index.html#personas-titulo">Nosotros</a>
+             <a href="index.html#iconos">Servicios</a>
+             <a href="index.html#contacto">Contacto</a>-->
+             <a href="{{ url_for('back') }}">login</a>
+             <label for="check" class="esconder-menu">&#215</label>
+         </nav>
+     </header>
+    <!------- 2) CONTENIDO PRINCIPAL ------->
+    <main>
+        <h1> CONTENIDO DIGITAL </h1>     
+        <section>
+            <div class="contenedor">
+                <div class="cont-texto">
+                    <p>
+                    
+                        ✔ Hoy es fundamental la premisa <br> <i>"Si tu negocio no está en redes, no existe"...</i> <br>  y nosotros nos encargamos de que tu Sitio Web exista y sea diferente. <br> 
+                    </p>
+                </div>
+                <div class="cont-img">
+                    <img src="/static/images/front/pc_gamer_pink.png" alt="">
+                </div>
+            </div>
+        </section>      
+    </main>
+    
+     <!-------- FOOTER -------->
+     <footer class="footer">
+        <!-------- ICONOS -------->
+         <ul class="social-icon">
+             <li class="icon-elemento">
+                 <a href="" class="icon">
+                     <ion-icon name="logo-whatsapp"></ion-icon>
+                 </a>
+             </li>
+             <li class="icon-elemento">
+                 <a href="" class="icon"> 
+                     <ion-icon name="logo-instagram"></ion-icon>
+                 </a>
+             </li>
+             <li class="icon-elemento">
+                 <a href="" class="icon">
+                     <ion-icon name="logo-facebook"></ion-icon>
+                 </a>
+             </li>
+             <li class="icon-elemento">
+                 <a href="" class="icon">
+                     <ion-icon name="mail-outline"></ion-icon>
+                 </a>
+             </li>  
+         </ul>
+        <!-------- MENU FOOTER -------->
+         <ul class="menu-footer">
+             <li class="menu-footer-elemento">
+                 <a href="/" class="menu-footer-icon">Inicio</a>
+             </li>
+             <!-- <li class="menu-footer-elemento">
+                 <a href="index.html#personas-titulo" class="menu-footer-icon">Nosotros</a>
+             </li>
+             <li class="menu-footer-elemento">
+                 <a href="index.html#iconos" class="menu-footer-icon">Servicios</a>
+             </li>
+             <li class="menu-footer-elemento">
+                 <a href="index.html#contacto" class="menu-footer-icon">Contacto</a>
+             </li> -->
+             <li class="menu-footer-elemento">
+                <a href="{{ url_for('back') }}" class="menu-footer-icon">Login</a>
+            </li> 
+         </ul>
+         <p class="text">
+             &copy2024 | Trabajo Realizado por Juan, Deborah, Maximiliano y David |  &copy2024 
+         </p>
+     </footer>
+    <!----------------------------------------------------->
+    <!-- Importo desde web ionicons para los ICONOS -->
+    <script  
+         type = "module" 
+         src = "https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+    </script> 
+    <script 
+         nomodule  src = "https://unpkg .com/ionicons@7.1.0/dist/ionicons/ionicons.js"> 
+    </script> 
+</body>
+</html>
